@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="/assets/style.css" type="text/css">
+</head>
+
+<body>
+    <h1>Todo List</h1>
+
+    <div id="todo-table">
+        <form action="/todo" method="POST">
+            <input type="text" id="todo" name="todo" placeholder="Todo task here...">
+            <button>Add task</button>
+        </form>
+        <ul>
+
+            <%for(let item of tasks) {%>
+
+                <li class="todo">
+                    <a href="/todo/<%= item._id %>" data-doc="<%= item._id %>" class="task">
+                        <%=item.todo%>
+                    </a>
+
+                </li>
+                <%}%>
+
+        </ul>
+    </div>
+
+
+</body>
+
+</html>
